@@ -27,7 +27,7 @@ const signup = async (req, res) => {
 
     const newUser = new User({
       name,
-      email,
+      email,    
       password: hashedPassword,
       otp,
       otpExpiry,
@@ -154,7 +154,7 @@ const resetPassword = async (req, res) => {
 
     user.password = hashedPassword;
     user.otp = null;
-    user.otpExpiry = null;
+    user.otpExpiry = null; 
 
     await user.save();
 

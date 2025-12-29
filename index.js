@@ -19,6 +19,11 @@ app.get("/", (req, res) => {
 
 app.use("/api/users", userRoutes);
 
+// 404 handler
+app.use((req, res) => {
+  res.status(404).json({ message: "Route not found" });
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
