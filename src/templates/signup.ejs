@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verify Your Account</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f7fa;
+        padding: 20px;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 30px 20px;
+        text-align: center;
+      }
+      .header h1 {
+        font-size: 28px;
+        margin-bottom: 5px;
+        font-weight: 600;
+      }
+      .content {
+        padding: 40px 30px;
+      }
+      .greeting {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+      .otp-section {
+        background-color: #f8f9fa;
+        border-left: 4px solid #667eea;
+        padding: 20px;
+        margin: 25px 0;
+        border-radius: 4px;
+      }
+      .otp-label {
+        font-size: 14px;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        display: block;
+        font-weight: 500;
+      }
+      .otp-code {
+        font-size: 36px;
+        font-weight: bold;
+        color: #667eea;
+        letter-spacing: 3px;
+        text-align: center;
+        font-family: "Courier New", monospace;
+      }
+      .expiry-info {
+        font-size: 13px;
+        color: #e74c3c;
+        margin-top: 15px;
+        text-align: center;
+        font-weight: 500;
+      }
+      .instructions {
+        background-color: #e8f4f8;
+        border-left: 4px solid #3498db;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 4px;
+        font-size: 14px;
+        color: #2c3e50;
+        line-height: 1.6;
+      }
+      .instructions li {
+        margin-left: 20px;
+        margin-bottom: 8px;
+      }
+      .footer {
+        background-color: #f8f9fa;
+        padding: 20px 30px;
+        border-top: 1px solid #e0e0e0;
+        font-size: 12px;
+        color: #999;
+        text-align: center;
+        line-height: 1.6;
+      }
+      .warning {
+        color: #e74c3c;
+        font-weight: 500;
+        margin-top: 10px;
+      }
+      .button {
+        display: inline-block;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 12px 30px;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-top: 20px;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>✓ Account Verification</h1>
+        <p>Verify your email address</p>
+      </div>
+
+      <div class="content">
+        <div class="greeting">
+          <strong>Hello <%= name %>,</strong><br /><br />
+          Welcome! We're excited to have you join our platform. To complete your
+          signup and secure your account, please verify your email address using
+          the OTP code below.
+        </div>
+
+        <div class="otp-section">
+          <span class="otp-label">Your Verification Code</span>
+          <div class="otp-code"><%= otp %></div>
+          <div class="expiry-info">⏰ This code expires in 10 minutes</div>
+        </div>
+
+        <div class="instructions">
+          <strong>How to verify your account:</strong>
+          <ul>
+            <li>Copy the OTP code above</li>
+            <li>
+              Return to our platform and enter the code in the verification
+              field
+            </li>
+            <li>Click "Verify" to complete your signup</li>
+          </ul>
+        </div>
+
+        <p style="color: #555; font-size: 14px; margin-top: 20px">
+          If you did not create an account with us, please ignore this email and
+          do not share this code with anyone.
+        </p>
+
+        <div class="warning">
+          ⚠️ Important: Never share your OTP with anyone. We will never ask for
+          it.
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>
+          This is an automated message, please do not reply to this email.<br />
+          If you need help, contact our support team.<br /><br />
+          © <%= new Date().getFullYear() %> Tech Jaunt. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

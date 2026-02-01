@@ -7,10 +7,13 @@ const {
   verifyOtp,
   resendOtp,
   getAllUsers,
+  getMe,
+  uploadProfilePicture,
 } = require("../controller/user.controller");
 
 const isAuth = require("../config/auth");
 const router = express.Router();
+const upload = require("../config/multer");
 
 // Auth
 router.post("/signup", signup);
@@ -26,5 +29,16 @@ router.post("/reset-password", resetPassword);
 
 // Admin
 router.get("/get-all-users", isAuth, getAllUsers);
+
+// Get current user
+router.get("/me", isAuth, getMe);
+
+// Upload profile picture
+router.put(
+  "/upload-profile-picture",
+  isAuth,
+  upload.single("profilePicture"),
+  uploadProfilePicture,
+);
 
 module.exports = router;

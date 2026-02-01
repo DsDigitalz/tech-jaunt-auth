@@ -5,6 +5,7 @@ const connectDB = require("./src/config/db");
 require("dotenv").config();
 
 const userRoutes = require("./src/routes/user.routes");
+const walletRoutes = require("./src/routes/user.wallets.routes");
 
 const port = process.env.PORT || 5000;
 
@@ -17,7 +18,8 @@ app.get("/", (req, res) => {
   res.send("Welcome To My Auth Class");
 });
 
-app.use("/api/users", userRoutes);
+app.use("/api/users", userRoutes);  
+app.use("/api/wallets", walletRoutes);
 
 // 404 handler
 app.use((req, res) => {
